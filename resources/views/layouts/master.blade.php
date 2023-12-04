@@ -77,7 +77,7 @@
                         </a>
                     </li>
                     <li class="{{ 'aboutus' == request()->path() ? 'active' : '' }}">
-                        <a href="./aboutus">
+                        <a href="{{ route('about') }}">
                             <i class="now-ui-icons ui-1_bell-53"></i>
                             <p>About Us</p>
                         </a>

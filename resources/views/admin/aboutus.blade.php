@@ -11,7 +11,7 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add About Us</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   
+
                 </div>
                 <form action="/saveaboutus" method="POST">
                     @csrf
@@ -30,12 +30,12 @@
                         </div>
 
                     </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-            </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -46,11 +46,12 @@
                     <div class="card-body">
                         <h4 class="card-title"> About Us
                             <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Add</button> @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                                data-bs-target="#exampleModal">Add</button>
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                         </h4>
                         <div class="table-responsive">
                             <table class="table">
@@ -63,18 +64,26 @@
                                     <th>delete</th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>rice</td>
-                                        <td>rice</td>
-                                        <td>rice</td>
-                                        <td>rice</td>
-                                        <td>
-                                            <a href="#" class="btn btn-success">EDIT</a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger">DELETE</a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($aboutUs as $item)
+                                        <tr>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->title }}</td>
+                                            <td>{{ $item->subtitle }}</td>
+                                            <td>{{ $item->description }}</td>
+                                            <td>
+                                                <a class="btn btn-success"
+                                                    href="{{ route('aboutEditView', ['id' => $item->id]) }}">Edit</a>
+                                            </td>
+                                            <td>
+                                                <form action="{{ route('aboutDelete', ['id' => $item->id]) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

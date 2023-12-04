@@ -40,9 +40,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::put('/registerupdate/{id}', [DashboardController::class, 'update'])->name('registerupdateuser');
     
     Route::delete('/userdelete/{id}', [DashboardController::class, 'delete'])->name('userdelete');
-
+    
     Route::get('/aboutus', [Aboutuscontroller::class, 'index'])->name('about');
-
+    
     Route::post('/saveaboutus', [Aboutuscontroller::class, 'store'])->name('storeaboutus');
+    
+    Route::get('/aboutedit/{id}', [Aboutuscontroller::class, 'edit'])->name('aboutEditView');
+    Route::put('/aboutedit/{id}', [Aboutuscontroller::class, 'update'])->name('aboutUpdate');
 
+    Route::delete('/aboutDelete/{id}', [Aboutuscontroller::class, 'delete'])->name('aboutDelete');
+    
 });

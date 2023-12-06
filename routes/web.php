@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardcontroller;
+use App\Http\Controllers\Servicecontroller;
 use App\Models\User;
 
 /*
@@ -46,8 +47,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::post('/saveaboutus', [Aboutuscontroller::class, 'store'])->name('storeaboutus');
     
     Route::get('/aboutedit/{id}', [Aboutuscontroller::class, 'edit'])->name('aboutEditView');
+
     Route::put('/aboutedit/{id}', [Aboutuscontroller::class, 'update'])->name('aboutUpdate');
 
     Route::delete('/aboutDelete/{id}', [Aboutuscontroller::class, 'delete'])->name('aboutDelete');
     
+    Route::get('/service-category', [Servicecontroller::class, 'index'])->name('services');
+
+    Route::get('/create-service', [Servicecontroller::class, 'create'])->name('service');
+
+    Route::post('/service-store', [Servicecontroller::class, 'store'])->name('services');
+    
+    Route::get('/serviceedit/{id}', [Servicecontroller::class, 'edit'])->name('serviceEditView');
+
+    Route::put('/service-update/{id}', [Servicecontroller::class, 'update'])->name('serviceUpdate');
+
+    Route::delete('/service-delete/{id}', [Servicecontroller::class, 'delete'])->name('servicedelete');
 });

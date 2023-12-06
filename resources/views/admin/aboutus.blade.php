@@ -11,7 +11,6 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Add About Us</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
                 </div>
                 <form action="/saveaboutus" method="POST">
                     @csrf
@@ -28,7 +27,6 @@
                             <label for="message-text" class="col-form-label">Description:</label>
                             <textarea name="description" class="form-control" id="message-text"></textarea>
                         </div>
-
                     </div>
 
                     <div class="modal-footer">

@@ -24,7 +24,7 @@ class Dashboardcontroller extends Controller
         $users->name = $request->input('username');
         $users->usertype = $request->input('usertype');
         $users->update();
-        return redirect()->back()->with('status', 'Your Data is Updated');
+        return redirect('adminregister')->with('status', 'Your Data is Updated');
     }
     public function delete($id)
     {

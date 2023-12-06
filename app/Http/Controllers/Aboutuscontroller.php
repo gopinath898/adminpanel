@@ -37,7 +37,7 @@ class Aboutuscontroller extends Controller
         $about->subtitle = $request->input('subtitle');
         $about->description = $request->input('description');
         $about->update();
-        return redirect()->back()->with('status', 'Your Data is Updated');
+        return redirect('aboutus')->with('status', 'Your Data is Updated');
     }
 
     public function delete($id)

@@ -5,12 +5,46 @@
 @endsection
 
 @section('content')
+    <div class="modal fade" id="createService" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url('service-store') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label> Service Cate Name</label>
+                                    <input type="text" name="service_name" class="form-control"
+                                        placeholder="Enter Service Name">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label> Service Description</label>
+                                    <textarea name="service_description" class="form-control" id="message-text" placeholder="Enter Service Name"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">SAVE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Service Category</h4>
-                    <a href="{{ url('create-service') }}" class="btn btn-primary float-right ">Add</a>
+                    <button class="btn btn-primary float-right" type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#createService">Add</button>
                 </div>
                 <div class="card-body">
                     <table class="table">

@@ -1752,9 +1752,8 @@ textarea.form-control {
   max-height: 80px;
   padding: 10px 10px 0 0;
   resize: none;
-  border: none;
   border-bottom: 1px solid #E3E3E3;
-  border-radius: 0;
+  border-radius: 0.4rem;
   line-height: 2;
 }
 
@@ -2896,6 +2895,11 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .dropdown-menu.dropdown-warning .dropdown-header:not([href]):not([tabindex]) {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown-menu.dropdown-menu-end.show{
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .dropdown-menu.dropdown-warning .dropdown-item {

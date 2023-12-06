@@ -73,7 +73,13 @@
                     <li class="{{ 'service-category' == request()->path() ? 'active' : '' }}">
                         <a href="{{ url('service-category') }}">
                             <i class="now-ui-icons location_map-big"></i>
-                            <p>Services</p>
+                            <p>Service - Category</p>
+                        </a>
+                    </li>
+                    <li class="{{ 'service-list' == request()->path() ? 'active' : '' }}">
+                        <a href="{{ url('service-list') }}">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>Service - List</p>
                         </a>
                     </li>
                     <li class="{{ 'aboutus' == request()->path() ? 'active' : '' }}">

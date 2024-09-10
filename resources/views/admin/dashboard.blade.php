@@ -14,17 +14,21 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
-                                    <th>name</th>
-                                    <th>Country</th>
-                                    <th>city</th>
-                                    <th>Salary</th>
+                                    <th>Services</th>
+                                    <th colspan="9">About Us</th>
+                                    <th>admin</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>rice</td>
-                                        <td>rice</td>
-                                        <td>rice</td>
-                                        <td>rice</td>
+                                        <td colspan="5">
+                                            Total Services: <b>{{ count($services) }}</b> 
+                                        </td>
+                                        <td colspan="5">
+                                            Total About Us: <b>{{ count($abouts) }}</b> 
+                                        </td>
+                                        <td colspan="5">
+                                            Total Users:<b>{{ count($users) }}</b> 
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

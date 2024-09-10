@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
+use App\Models\Abouts;
+
 
 class Dashboardcontroller extends Controller
 {
@@ -13,6 +16,21 @@ class Dashboardcontroller extends Controller
 
         return view('admin.adminregister', ['users' => $users]);
     }
+    public function about()
+    {
+        // Fetch the services
+        $services = ServiceCategory::all();
+
+        // Fetch abouts data
+        $abouts = Abouts::all();
+
+        // Fetch abouts data
+        $users = User::all();
+
+        // Pass both $services and $abouts to the view
+        return view('admin.dashboard', compact('services', 'abouts','users'));
+    }
+    
     public function edit($id)
     {
         $users = User::findOrFail($id);
